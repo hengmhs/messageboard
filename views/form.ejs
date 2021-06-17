@@ -8,9 +8,10 @@
     <h1>New Message</h1>
     <form method="POST" action="/new">
       <label for="fname">Name:</label><br>
-      <input type="text" id="name" name="name" value="John"><br>
-      <label for="lname">Message:</label><br>
-      <input type="textarea" id="message" name="message" value="This is my message!"><br><br>
+      <input type="text" name="messageUser" value="John"><br>
+      <label for="message">Message:</label><br>
+      <textarea rows="4" cols="50" name="messageText">This is my message!</textarea>
+      <br><br>
       <input type="submit" value="Submit">
     </form>
   </body>

@@ -15,13 +15,22 @@ const messages = [
 ];
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
   res.render('index', { title: 'Mini Messageboard' , messages: messages});
 });
 
 /* new form */
-router.get('/new', function(req, res, next) {
+router.get('/new', (req, res, next) => {
   res.render('form', {title: 'Mini Messageboard'});
+});
+
+/*create new message*/
+router.post('/new', (req, res, next) => {
+  const messageUser = req.body.messageUser;
+  const messageText = req.body.messageText;
+  console.log(req.body);
+  messages.push({text: messageText, user: messageUser, added: new Date()});
+  res.redirect('/');
 });
 
 module.exports = router;
